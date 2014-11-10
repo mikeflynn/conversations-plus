@@ -32,3 +32,9 @@ Aside from a few tricks to keep the Speech API to keep listening to you, the mai
 
 ## Questions, Comments, etc...
 You can leave a GitHub issue or pull request of course, but for direct questions I'm [@mikeflynn_](https://twitter.com/mikeflyn_) on Twitter.
+
+## Security Issues
+
+Q: If I turn this on will the NSA be recording everything I say?
+
+A: Yes. Especially if you mention any known terrorist keywords like "Coolio".
