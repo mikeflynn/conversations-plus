@@ -1,8 +1,13 @@
 window.onload = function() {
   if ('webkitSpeechRecognition' in window) {
-    var recoginzer = new webkitSpeechRecognition();
+    window.recoginzer = new webkitSpeechRecognition();
     recoginzer.continuous = true;
     recoginzer.interimResults = true;
+
+    recoginzer.onstart = function() {
+
+    };
+
     recoginzer.onresult = function(e) {
       var transcript = '';
 
@@ -13,8 +18,7 @@ window.onload = function() {
       }
 
       if(transcript !== '') {
-        console.log("You said: " + transcript);
-
+        logText(transcript);
         for(var x in conversation) {
           var re = new RegExp(conversation[x].str, "ig");
           if(re.test(transcript) === true) {
@@ -24,8 +28,7 @@ window.onload = function() {
               timeout = 10;
             }
 
-            recoginzer.stop();
-            setTimeout(function() { recoginzer.start(); }, timeout * 1000);
+            pauseListen(timeout);
 
             return;
           }
@@ -36,12 +39,30 @@ window.onload = function() {
   } else {
     console.log("No talkie for you!");
   }
+
+  setInterval(function() { pauseListen(1); }, 30 * 1000);
+};
+
+var pauseListen = function(seconds) {
+  window.recoginzer.stop();
+  setTimeout(function() {
+    window.recoginzer.start();
+  }, seconds * 1000);
 };
 
 var log = function(text) {
   jQuery('h1#text').text(text).fadeOut(5000, function() {
     jQuery('h1#text').text('').show();
   });
+};
+
+var logText = function(text, matched) {
+  var highlight = "";
+  if(matched) {
+    highlight = "highlight";
+  }
+
+  jQuery('#chatter').prepend('<div class="' + highlight + '">' + text + '</div>');
 };
 
 var conversation = [
