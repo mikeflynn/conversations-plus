@@ -30,10 +30,10 @@ There are two parts to this: A Node.js web server with included self-signed keys
 
 Aside from a few tricks to keep the Speech API to keep listening to you, the main requirement is the SSL (which is why I went to the trouble of adding the web server and hosting the example on GitHub Pages). SSL allows you to only have to authorize the use of the microphone once rather than having to reauthorize every time I restart the speech API (which is a lot).
 
-http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
-http://facebook.github.io/react/
-http://nodejs.org/api/
-http://en.wikipedia.org/wiki/Coolio
+* http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
+* http://facebook.github.io/react/
+* http://nodejs.org/api/
+* http://en.wikipedia.org/wiki/Coolio
 
 ## Questions, Comments, etc...
 You can leave a GitHub issue or pull request of course, but for direct questions I'm [@mikeflynn_](https://twitter.com/mikeflyn_) on Twitter.
