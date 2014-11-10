@@ -8,3 +8,27 @@ The quickest and easiest way to get started is to go to: https://mikeflynn.githu
 
 ## Customization
 The link above is great if you talk about Coolio a lot (and who doesn't), but if for some reason you don't (maybe a Tone Loc fan?) you can clone this repo and run your own version locally.
+
+Steps to get it running:
+
+1. Clone this repo to your computer.
+2. Install Node.js: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
+3. `cd` to the project directory and run `npm start`
+4. Open Chrome and go to: https://localhost:8000
+5. Say stuff.
+
+To customize the voice actions:
+
+1. Create a new javscript file, say addons.js and modify htdocs/index.html to include that script right after build/app.js (bottom of the page).
+2. In that script you'll call `ConversationsPlus.addMatcher(regex, function)` as many times as you need with the regex to match the incoming text and the function to run when a match happens.
+```javascript
+ConversationsPlus.addMatcher("2pac|tupac", function() { console.log("California Love!"); }); 
+```
+
+## Technical Details
+There are two parts to this: A Node.js web server with included self-signed keys to get SSL up and running, and a ReactJS web application that handles the speech recoginition and displaying the results.
+
+Aside from a few tricks to keep the Speech API to keep listening to you, the main requirement is the SSL (which is why I went to the trouble of adding the web server and hosting the example on GitHub Pages). SSL allows you to only have to authorize the use of the microphone once rather than having to reauthorize every time I restart the speech API (which is a lot).
+
+## Questions, Comments, etc...
+You can leave a GitHub issue or pull request of course, but for direct questions I'm [@mikeflynn_](https://twitter.com/mikeflyn_) on Twitter.
