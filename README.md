@@ -21,9 +21,20 @@ To customize the voice actions:
 
 1. Create a new javscript file, say addons.js and modify htdocs/index.html to include that script right after build/app.js (bottom of the page).
 2. In that script you'll call `ConversationsPlus.addMatcher(regex, function)` as many times as you need with the regex to match the incoming text and the function to run when a match happens.
-```javascript
-ConversationsPlus.addMatcher("2pac|tupac", function() { console.log("California Love!"); }); 
-```
+
+  ```javascript
+  ConversationsPlus.addMatcher("2pac|tupac", function() { console.log("California Love!"); }); 
+  ```
+
+3. There is a single helper function you have access to that takes an image url and loads it on as the background of the page: `this.setBg('https://i.imgur.com/N1mYFE6.gif');`
+
+  ```javascript
+  ConversationsPlus.addMatcher("full\\s*house", function() {
+    this.setBg('https://i.imgur.com/N1mYFE6.gif');
+  }); 
+  ```
+
+4. You can do pretty much anything you want in your callback function, but note that because SSL is a requirement you Chrome won't like it if you try to load any non-secure elements.
 
 ## Technical Details
 There are two parts to this: A Node.js web server with included self-signed keys to get SSL up and running, and a ReactJS web application that handles the speech recoginition and displaying the results.
