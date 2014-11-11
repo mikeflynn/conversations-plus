@@ -49,3 +49,17 @@ body {
   z-index: 1;
   position: absolute;
 }
+
+#help {
+  font-size: 28px;
+  width: 66%;
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 18%;
+  background: #333;
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+  opacity: .85;
+}

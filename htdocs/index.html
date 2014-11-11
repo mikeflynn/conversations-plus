@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <p id="help">
+    Just start talking! If you trip any of the keywords a picture will show up on the screen. Try saying: "Coolio".
+  </p>
+  <script type="text/javascript">
+    function fade(element) {
+        var op = 1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op <= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op -= op * 0.1;
+        }, 50);
+    }
+    setTimeout(function() { fade(document.getElementById("help")); }, 3 * 1000);
+  </script>
+
   <div id="app"></div>
   <script type="text/javascript" src="build/app.js"></script>
 
