@@ -20,3 +20,7 @@ ConversationsPlus.addMatcher("fart", function(str) {
   audio.src = "/media/fart.wav";
   audio.play();
 });
+
+ConversationsPlus.addMatcher("full\\s*house", function() {
+  this.setBg('https://i.imgur.com/N1mYFE6.gif');
+});
