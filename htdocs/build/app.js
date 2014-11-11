@@ -82,7 +82,7 @@ var ConversationsPlus = React.createClass({displayName: 'ConversationsPlus',
             timeout = 10;
           }
 
-          setTimeout(this.setBg, timeout);
+          setTimeout(this.setBg, timeout * 1000);
           this.pauseListen(timeout);
 
           return;
@@ -144,20 +144,20 @@ var ConversationsPlus = React.createClass({displayName: 'ConversationsPlus',
     state.data.background = url;
     this.setState(state);
   },
-  handleCoolio: function() { // For the record: No one can truly handle Coolio.
+  handleCoolio: function(transcript) { // For the record: No one can truly handle Coolio.
     var images = [
-      "http://i.imgur.com/fEaS9Sq.jpg",
-      "http://i.imgur.com/vkeJJDE.jpg",
-      "http://i.imgur.com/g1F19L4.jpg",
-      "http://i.imgur.com/oTc9Hkz.jpg",
-      "http://i.imgur.com/7pErUfD.jpg",
-      "http://i.imgur.com/S0HaZvW.jpg",
-      "http://i.imgur.com/fv5s7M0.jpg",
-      "http://i.imgur.com/mpuEkfQ.jpg",
-      "http://i.imgur.com/NyFhTbZ.jpg",
-      "http://i.imgur.com/bpgHraM.jpg"
+      "https://i.imgur.com/fEaS9Sq.jpg",
+      "https://i.imgur.com/vkeJJDE.jpg",
+      "https://i.imgur.com/g1F19L4.jpg",
+      "https://i.imgur.com/oTc9Hkz.jpg",
+      "https://i.imgur.com/7pErUfD.jpg",
+      "https://i.imgur.com/S0HaZvW.jpg",
+      "https://i.imgur.com/fv5s7M0.jpg",
+      "https://i.imgur.com/mpuEkfQ.jpg",
+      "https://i.imgur.com/NyFhTbZ.jpg",
+      "https://i.imgur.com/bpgHraM.jpg"
     ];
-    this.setBg(images[Math.floor(Math.random()*items.length)]);
+    this.setBg(images[Math.floor(Math.random()*images.length)]);
   },
   render: function() {
     var bgStyle = {};
