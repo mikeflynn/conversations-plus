@@ -82,6 +82,7 @@ var ConversationsPlus = React.createClass({displayName: 'ConversationsPlus',
             timeout = 10;
           }
 
+          setTimeout(this.setBg, timeout * 1000);
           this.pauseListen(timeout);
 
           return;
@@ -138,12 +139,25 @@ var ConversationsPlus = React.createClass({displayName: 'ConversationsPlus',
     this.setState(state);
   },
   setBg: function(url) {
+    if(!url) { url = false; }
     var state = this.state;
     state.data.background = url;
     this.setState(state);
   },
-  handleCoolio: function() {
-    this.setBg('http://assets.noisey.com/content-images/article/after-all-these-years-coolio-still-lets-his-nuts-hang/Coolio1-copy_vice_970x435.jpg');
+  handleCoolio: function(transcript) { // For the record: No one can truly handle Coolio.
+    var images = [
+      "https://i.imgur.com/fEaS9Sq.jpg",
+      "https://i.imgur.com/vkeJJDE.jpg",
+      "https://i.imgur.com/g1F19L4.jpg",
+      "https://i.imgur.com/oTc9Hkz.jpg",
+      "https://i.imgur.com/7pErUfD.jpg",
+      "https://i.imgur.com/S0HaZvW.jpg",
+      "https://i.imgur.com/fv5s7M0.jpg",
+      "https://i.imgur.com/mpuEkfQ.jpg",
+      "https://i.imgur.com/NyFhTbZ.jpg",
+      "https://i.imgur.com/bpgHraM.jpg"
+    ];
+    this.setBg(images[Math.floor(Math.random()*images.length)]);
   },
   render: function() {
     var bgStyle = {};
