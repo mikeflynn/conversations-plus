@@ -17,7 +17,7 @@ ConversationsPlus.addMatcher("tacos?", function(str) {
 ConversationsPlus.addMatcher("fart", function(str) {
   this.setBg('https://i.imgur.com/HZHDT8f.jpg');
   var audio = document.createElement("audio");
-  audio.src = "/media/fart.wav";
+  audio.src = "https://cdn.rawgit.com/mikeflynn/conversations-plus/master/htdocs/media/fart.wav";
   audio.play();
 });
 
