@@ -47,7 +47,7 @@ Aside from a few tricks to keep the Speech API to keep listening to you, the mai
 * http://en.wikipedia.org/wiki/Coolio
 
 ## Questions, Comments, etc...
-You can leave a GitHub issue or pull request of course, but for direct questions I'm [@mikeflynn_](https://twitter.com/mikeflyn_) on Twitter.
+You can leave a GitHub issue or pull request of course, but for direct questions I'm [@thatmikeflynn](https://twitter.com/thatmikeflynn) on Twitter.
 
 ## Security Issues
 
